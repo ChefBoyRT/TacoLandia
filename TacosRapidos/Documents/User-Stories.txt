@@ -1,0 +1,12 @@
+USER STORIES
+--------------------------
+1. User can create an account (username, password)
+2. User can choose to do:
+    - Taco quiz (taco)
+        - Match taco to cocktail or beer
+    - See saved recipes
+    - Find restauraunts to get the taco
+    - Scale recipe to number of servings
+    - Random taco suggestion
+    - Vote up and down
+    - View most popular recipes 

@@ -1,0 +1,18 @@
+HOW TO APPROACH PROJECT WEEK
+--------------------------------
+1. Establish ROE (Rules of Engagement)
+2. Data Dump - brainstorming
+3. Narrow Your Options
+    ==> Requirements
+    ==> Time
+    ==> Scope
+4. Flesh Out Remaining Concepts
+5. Scaffold / Outline Concept
+    ==> User Stories
+    ==> Wire Frames
+        -> scetch out the layout of pages should look like (stylizing, UX)
+    ==> MVP
+        -> scope
+6. Write Code
+7. Take Breaks
+8. Agile
