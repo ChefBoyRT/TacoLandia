@@ -82,20 +82,6 @@ tacos = [
         heat_level: 3,
         shell_type: "soft",
         drink_paring: "sangria"
-    },
-    {
-        name: "string",
-        protein: "string",
-        heat_level: 1-3,
-        shell_type: "string",
-        drink_paring: "beer"
-    },
-    {
-        name: "string",
-        protein: "string",
-        heat_level: 1-3,
-        shell_type: "string",
-        drink_paring: "beer"
     }, 
     {
         name: "Baja Pork",
@@ -194,7 +180,6 @@ tacos = [
         heat_level: 2,
         shell_type: "crunchy",
         drink_paring: "margarita"
->>>>>>> cats_tacos
         },
     {
         name: "Chipotle Salmon",
