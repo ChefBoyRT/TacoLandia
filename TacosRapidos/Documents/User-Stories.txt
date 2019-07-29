@@ -10,3 +10,7 @@ USER STORIES
     - Random taco suggestion
     - Vote up and down
     - View most popular recipes 
+    - Sorting options
+        - count of ingredients
+        - length of instructions
+        - serving size
