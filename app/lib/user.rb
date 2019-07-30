@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-   
     # Returns array of user names 
     def self.get_user_names
         all.pluck(:name)
