@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
     has_many :meals
     has_many :tacos, through: :meals
    
-
-   
     # Returns array of user names 
     def self.get_user_names
         all.pluck(:name)

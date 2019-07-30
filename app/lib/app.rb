@@ -4,9 +4,8 @@ def welcome_user
 end
 
 def runner
+    prompt = TTY::Prompt.new
     welcome_user
-    # names = User.get_user_names
-    # prompt.select("What is your name friend?", %w(names "Create New User"))
-        
+    names = User.get_user_names
+    selection = prompt.select("What is your name friend?", names)
 end
-
