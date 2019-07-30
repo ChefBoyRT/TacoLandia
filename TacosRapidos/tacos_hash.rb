@@ -1,3 +1,5 @@
+require 'pry'
+def tacos
 tacos = [
     {
         name: "Asian Marinated Chicken",
@@ -211,3 +213,15 @@ tacos = [
     }
        
 ]
+end
+
+
+#puts names and returns array of taco names
+def taco_names 
+    tacos.map do |taco|
+       p taco[:name]
+    end
+end
+
+
+# binding.pry
