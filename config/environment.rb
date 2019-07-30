@@ -10,4 +10,8 @@ ActiveRecord::Base.establish_connection(
     database: 'db/tacos.db'
 )
 
-binding.pry
+ActiveRecord::Base.logger.level = 0
+
+# runner
+
+# binding.pry
