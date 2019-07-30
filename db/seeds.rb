@@ -1,6 +1,7 @@
+Meal.destroy_all
 Taco.destroy_all
-Drink.destroy_all
 User.destroy_all
+Drink.destroy_all
 
 
 #Users
@@ -47,7 +48,7 @@ grilled_tempeh = Taco.create(name: "Grilled Tempeh", protein: "veggies", heat_le
 tofu_and_black_bean = Taco.create(name: "Tofu and Black Bean", protein: "veggies", heat_level: 1, shell_type: "crunchy", drink: margarita)
 
 #Seafood Tacos
-baha_fish = Taco.create(name: "Baha Fish", protein: "seafood", heat_level: 1, shell_type: "crunchy", drink: beer)
+baja_fish = Taco.create(name: "Baha Fish", protein: "seafood", heat_level: 1, shell_type: "crunchy", drink: beer)
 veracruz_fish = Taco.create(name: "Veracruz Fish", protein: "seafood", heat_level: 2, shell_type: "crunchy", drink: margarita)
 chipotle_salmon = Taco.create(name: "Chipotle Salmon", protein: "seafood", heat_level: 3, shell_type: "crunchy", drink: sangria)
 grilled_shrimp = Taco.create(name: "Grilled Shrimp", protein: "seafood", heat_level: 2, shell_type: "soft", drink: margarita)
@@ -55,7 +56,10 @@ cilantro_lime_mahi_fish = Taco.create(name: "Cilantro Lime Mahi Fish", protein: 
 fried_shrimp = Taco.create(name: "Fried Shrimp", protein: "seafood", heat_level: 1, shell_type: "soft", drink: beer)
 
 
+#Meals
+meal1 = Meal.create(taco: baja_fish, user: Taylor)
+meal2 = Meal.create(taco: ropa_vieja, user: Taylor)
+meal3 = Meal.create(taco: pulled_pork, user: Cat)
+meal4 = Meal.create(taco: grilled_shrimp, user: Cat)
 
 
-##need to build many-to-many through users (tacos >- users -< drink?)  
-##CRUD(tacos or users?)

@@ -10,5 +10,4 @@ ActiveRecord::Base.establish_connection(
     database: 'db/tacos.db'
 )
 
-
 binding.pry

@@ -1,3 +1,3 @@
 class Drink < ActiveRecord::Base
-    belongs_to :tacos
+    has_many :tacos
 end
