@@ -14,6 +14,6 @@ ActiveRecord::Base.establish_connection(
 
 prompt = TTY::Prompt.new
 
-runner
+# runner
 
-# binding.pry
+binding.pry
