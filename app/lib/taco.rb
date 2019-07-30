@@ -5,9 +5,6 @@ class Taco < ActiveRecord::Base
 
     def self.get_taco_names
         all.pluck(:name).sort
-        # taco_names.map do |taco|
-        #     p taco
-        # end
     end
 
 end
