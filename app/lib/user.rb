@@ -1,10 +1,5 @@
 class User < ActiveRecord::Base
    
-    def welcome_user
-        puts "Welcome to TacoLandia!!!"
-        puts "Tell us who you are"
-    end
-   
     # Returns array of user names 
     def self.get_user_names
         all.pluck(:name)
