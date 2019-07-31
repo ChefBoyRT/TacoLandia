@@ -15,4 +15,8 @@ class Taco < ActiveRecord::Base
         puts "Shell Type: " + returned_taco.shell_type
     end
 
+    def self.get_taco_id(taco)
+        Taco.find_by(name: taco).id
+    end
+
 end
