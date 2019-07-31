@@ -7,4 +7,12 @@ class Taco < ActiveRecord::Base
         all.pluck(:name).sort
     end
 
+    def self.get_taco_details(taco)
+        returned_taco = Taco.find_by(name: taco)
+        puts "Name: " + returned_taco.name + " Taco"
+        puts "Protein: " + returned_taco.protein
+        puts "Heat Level: " + returned_taco.heat_level.to_s
+        puts "Shell Type: " + returned_taco.shell_type
+    end
+
 end
