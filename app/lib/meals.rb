@@ -8,7 +8,7 @@ class Meal < ActiveRecord::Base
             Meal.create(taco_id: taco_id, user_id: user_id)
             puts "-~~~AWESOME-SAUCE~~~"
             sleep(1.25)
-            puts "Your #{taco_selection_by_protein} Taco has been saved!!!"
+            puts "Your taco has been saved!!!"
             sleep(1.25)
             system "clear"
         else

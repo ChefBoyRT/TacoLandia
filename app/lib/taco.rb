@@ -41,6 +41,7 @@ class Taco < ActiveRecord::Base
         else
             puts "Your best match is a #{random_taco.name}!"
         end
-        
+        return random_taco
     end
+    
 end

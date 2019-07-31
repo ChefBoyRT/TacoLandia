@@ -163,18 +163,36 @@ def runner
             end
 
         when "Taco compatibility quiz"
-            Taco.quiz
+            taco_quiz_result = Taco.quiz
+            # binding.pry
             sleep(1)
             puts "\n"
-            menu_selection = prompt.select("Please choose an option:", menu_options)
+            save_taco_response = prompt.select("Save taco to favorites?", ["Yes", "No"])
+                if save_taco_response == "Yes"
+                    taco_id = taco_quiz_result.id
+                    user_id = User.get_user_id(user_name_selection)
+                    Meal.create_new_meal(taco_id, user_id)
+                    #either creates new meal or returns message
+                    menu_selection = prompt.select("Please choose an option:", menu_options)
+                    system "clear"
+                else
+                    puts "Okay!"
+                    sleep(1)
+                    system "clear"
+                    menu_selection = prompt.select("Please choose an option:", menu_options)
+                    # system "clear"
+                end
+
 
         when "See your favorite tacos"
+            sleep(0.25)
             system "clear"
             Meal.get_user_meals(user_name_selection)
-            puts "\n"
+            sleep(0.5)
             puts "\n"
             menu_selection = prompt.select("Please choose an option:", menu_options)
             system "clear"
+            sleep(0.25)
 
         when "Exit Program"
             system "clear"
