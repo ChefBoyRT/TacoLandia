@@ -18,7 +18,7 @@ def runner
     end
 
     #display main menu
-    menu_options = ["Show me a list of tacos", "Choose a random taco for me", "Pair taco to drink"]
+    menu_options = ["Show me a list of tacos", "Choose a random taco for me", "Pair taco to drink", "See your favorite tacos"]
     menu_selection = prompt.select("Please choose an option:", menu_options)
     if menu_selection == "Show me a list of tacos"
         taco_names = Taco.get_taco_names
@@ -27,7 +27,16 @@ def runner
         end
     
     elsif menu_selection == "Choose a random taco for me"
-        print Taco.get_taco_names.sample + " Taco"
+        random_taco_return = Taco.get_taco_names.sample
+        puts random_taco_return + " Taco"
+        response = prompt.select("Please choose an option:", ["See taco details", "Save taco", "Return to main menu"])
+        if response == "See taco details"
+            Taco.get_taco_details(random_taco_return)
+        elsif response == "Save taco"
+            ########
+        elsif response == "Return to main menu"
+            ########
+        end
     
     elsif menu_selection == "Pair taco to drink"
         drink_names = Drink.get_drink_names
@@ -42,7 +51,5 @@ def runner
         end
 
     end
-
-
     
 end

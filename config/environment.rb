@@ -12,6 +12,7 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = nil
 
-runner
+# runner
 
 binding.pry
+
