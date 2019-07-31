@@ -9,12 +9,15 @@ def runner
     welcome_user
     user_names = User.get_user_names
     user_names << "Create new user"
+    user_names << "Exit program"
     user_name_selection = prompt.select("What is your name friend?", user_names)
     # binding.pry
-    if user_name_selection != "Create new user"
+    if user_names.include?(user_name_selection) && user_name_selection != "Exit program"
         puts "Welcome back #{user_name_selection}!"
-    else
+    elsif user_name_selection == "Create new user"
         new_user = User.create_user_name 
+    elsif user_name_selection == "Exit program"
+        abort "Goodbye!"
     end
 
     #display main menu
@@ -33,9 +36,16 @@ def runner
         if response == "See taco details"
             Taco.get_taco_details(random_taco_return)
         elsif response == "Save taco"
-            ########
+            taco_id = Taco.get_taco_id(random_taco_return)
+            user_id = User.get_user_id(user_name_selection)
+            Meal.create_new_meal(taco_id, user_id)
+            puts "AWESOME"
+            sleep(1)
+            puts "Your #{random_taco_return} Taco has been saved!!!"
+            sleep(2)
+            #### RETURN TO MAIN MENU #####
         elsif response == "Return to main menu"
-            ########
+            
         end
     
     elsif menu_selection == "Pair taco to drink"
