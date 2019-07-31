@@ -38,7 +38,7 @@ def runner
 
     #display main menu
     
-    menu_options = ["Show me some tacos", "Choose a random taco for me", "Pair taco to drink", "See your favorite tacos", "Exit Program"]
+    menu_options = ["Show me some tacos", "Choose a random taco for me", "Pair taco to drink", "Taco compatibility quiz", "See your favorite tacos", "Exit Program"]
     menu_selection = prompt.select("Please choose an option:", menu_options)
     system "clear"
     loop do
@@ -161,6 +161,12 @@ def runner
                     break
                 end
             end
+
+        when "Taco compatibility quiz"
+            Taco.quiz
+            sleep(1)
+            puts "\n"
+            menu_selection = prompt.select("Please choose an option:", menu_options)
 
         when "See your favorite tacos"
             system "clear"
