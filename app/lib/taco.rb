@@ -19,4 +19,8 @@ class Taco < ActiveRecord::Base
         Taco.find_by(name: taco).id
     end
 
+    def self.get_tacos_by_protein(protein)
+        Taco.where(protein: protein)
+    end
+
 end

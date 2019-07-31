@@ -32,12 +32,31 @@ def runner
 
     #display main menu
     
-    menu_options = ["Show me a list of tacos", "Choose a random taco for me", "Pair taco to drink", "See your favorite tacos", "Exit Program"]
+    menu_options = ["Show me some tacos", "Choose a random taco for me", "Pair taco to drink", "See your favorite tacos", "Exit Program"]
     menu_selection = prompt.select("Please choose an option:", menu_options)
     system "clear"
     loop do
         case menu_selection
-        when "Show me a list of tacos"
+        when "Show me some tacos"
+            protein_selection = prompt.select("Please select a protein", ["Chicken", "Beef", "Pork", "Veggie", "Seafood"])
+            returned_tacos = Taco.get_tacos_by_protein(protein_selection.downcase)
+            taco_names_by_protein = []
+            returned_tacos.each do |taco|
+                # puts taco.name
+                taco_names_by_protein << taco.name
+            end
+            system "clear"
+            taco_names_by_protein << "Main Menu"
+            taco_selection_by_protein = prompt.select("View taco details", taco_names_by_protein)
+            
+            
+            if detail_selection == "Yes"
+                Taco.get_taco_details()
+            end
+            binding.pry
+
+
+
             taco_names = Taco.get_taco_names
             taco_names.each do |taco|
                 puts taco 
