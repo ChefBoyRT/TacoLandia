@@ -25,6 +25,7 @@ def runner
     
     menu_options = ["Show me a list of tacos", "Choose a random taco for me", "Pair taco to drink", "See your favorite tacos", "Exit Program"]
     menu_selection = prompt.select("Please choose an option:", menu_options)
+    
     loop do
         case menu_selection
         when "Show me a list of tacos"
@@ -55,6 +56,7 @@ def runner
         
         when "Pair taco to drink"
             drink_names = Drink.get_drink_names
+            drink_names << "Main Menu"
             drink_selection = prompt.select("Please choose an option:", drink_names)
             
             if drink_selection == "Beer"
@@ -63,6 +65,8 @@ def runner
                 Drink.get_tacos_for_margarita
             elsif drink_selection == "Sangria"
                 Drink.get_tacos_for_sangria
+            else 
+                menu_selection = prompt.select("Please choose an option:", menu_options)
             end
         when "Exit Program"
             abort "Goodbye!"
