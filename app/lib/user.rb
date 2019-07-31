@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
         system "clear"
         puts "Welcome to TacoLandia #{name}!"
         ###Avocado Dancing####
+        return name
     end
 
 

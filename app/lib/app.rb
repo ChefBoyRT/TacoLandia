@@ -22,6 +22,7 @@ def runner
         puts "Welcome back #{user_name_selection}!"
     elsif user_name_selection == "Create new user"
         new_user = User.create_user_name 
+        user_name_selection = new_user
         sleep(1.5)
         system "clear"
     elsif user_name_selection == "Exit program"
@@ -94,6 +95,13 @@ def runner
             else 
                 menu_selection = prompt.select("Please choose an option:", menu_options)
             end
+
+        when "See your favorite tacos"
+            Meal.get_user_meals(user_name_selection)
+            sleep(4)
+            system "clear"
+            menu_selection = prompt.select("Please choose an option:", menu_options)
+            system "clear"
 
         when "Exit Program"
             abort "Goodbye!"
