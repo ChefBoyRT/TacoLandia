@@ -66,11 +66,7 @@ def runner
                     taco_id = Taco.get_taco_id(taco_selection_by_protein)
                     user_id = User.get_user_id(user_name_selection)
                     Meal.create_new_meal(taco_id, user_id)
-                    puts "-~~~AWESOME-SAUCE~~~"
-                    sleep(1.25)
-                    puts "Your #{taco_selection_by_protein} Taco has been saved!!!"
-                    sleep(1.25)
-                    system "clear"
+                    #either creates new meal or returns message
                     menu_selection = prompt.select("Please choose an option:", menu_options)
                     system "clear"
 
@@ -98,11 +94,7 @@ def runner
                     taco_id = Taco.get_taco_id(random_taco_return)
                     user_id = User.get_user_id(user_name_selection)
                     Meal.create_new_meal(taco_id, user_id)
-                    puts "~~~AWESOME-SAUCE~~~"
-                    sleep(1.25)
-                    puts "Your #{random_taco_return} Taco has been saved!!!"
-                    sleep(1.25)
-                    system "clear"
+                    #either creates new meal or returns message
                     menu_selection = prompt.select("Please choose an option:", menu_options)
                     system "clear"
                 else
@@ -116,11 +108,7 @@ def runner
                 taco_id = Taco.get_taco_id(random_taco_return)
                 user_id = User.get_user_id(user_name_selection)
                 Meal.create_new_meal(taco_id, user_id)
-                puts "~~~AWESOME-SAUCE~~~"
-                sleep(1)
-                puts "Your #{random_taco_return} Taco has been saved!!!"
-                sleep(1.25)
-                system "clear"
+                #either creates new meal or returns message
                 menu_selection = prompt.select("Please choose an option:", menu_options)
                 system "clear"
             elsif response == "Return to main menu"
