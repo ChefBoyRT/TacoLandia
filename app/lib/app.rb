@@ -48,10 +48,12 @@ def runner
             system "clear"
             taco_names_by_protein << "Main Menu"
             taco_selection_by_protein = prompt.select("View taco details", taco_names_by_protein)
-            
-            
-            if detail_selection == "Yes"
-                Taco.get_taco_details()
+            system "clear"
+            if taco_selection_by_protein == "Main Menu"
+                menu_selection = prompt.select("Please choose an option:", menu_options)
+                system "clear"
+            else
+                Taco.get_taco_details(taco_selection_by_protein)
             end
             binding.pry
 
