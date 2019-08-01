@@ -78,7 +78,7 @@ end
 def runner
     system "clear"
     #Welcomes user or creates new user
-    prompt = TTY::Prompt.new
+    prompt = TTY::Prompt.new(symbols: {marker: '🌮'})
     welcome_user
     sleep(1.5)
     system "clear"
