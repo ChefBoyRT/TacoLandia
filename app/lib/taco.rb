@@ -41,10 +41,17 @@ class Taco < ActiveRecord::Base
         banner
         return_tacos = Taco.where(protein: protein.downcase, heat_level: heat_level.to_i, shell_type: shell_type.downcase)
         random_taco = return_tacos.sample
+        random_compatibility_score = rand(80..100)
         if drink == "Yes..(21+)"
-            puts "Your best match is a #{random_taco.name} with a #{random_taco.drink.name}!" 
+            puts "Your best match is a #{random_taco.name} with a #{random_taco.drink.name}!"
+            puts "\n"
+            sleep(1.5)
+            puts "    TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
         else
-            puts "Your best match is a #{random_taco.name}!"
+            puts "        Your best match is a #{random_taco.name}!"
+            puts "\n"
+            sleep(1.5)
+            puts "TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
         end
         return random_taco
     end
