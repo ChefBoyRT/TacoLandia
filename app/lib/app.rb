@@ -38,23 +38,36 @@ def runner
     sleep(1.5)
     system "clear"
     user_names = User.get_user_names
-    user_names << "Create new user"
-    user_names << "Exit program"
-    user_name_selection = prompt.select("What is your name friend?", user_names)
+    name_menu_options = User.get_user_names
+    name_menu_options << "Create new user"
+    name_menu_options << "Update username"
+    name_menu_options << "Exit program"
+    user_name_selection = prompt.select("What is your name friend?", name_menu_options)
     
     # binding.pry
 
-    if user_names.include?(user_name_selection) && user_name_selection != "Exit program" && user_name_selection != "Create new user"
+    if user_names.include?(user_name_selection) && user_name_selection != "Exit program" && user_name_selection != "Create new user" && user_name_selection != "Update username"
         system "clear"
         puts "Welcome back #{user_name_selection}!"
         sleep(1.5)
         system "clear"
     elsif user_name_selection == "Create new user"
+        system "clear"
         new_user = User.create_user_name 
         user_name_selection = new_user
         sleep(1.5)
         system "clear"
+    elsif user_name_selection == "Update username"
+        system "clear"
+        user_name_selection = prompt.select("What is your name friend?", user_names)
+        # binding.pry
+        new_name = User.update_user_name(user_name_selection)
+        system "clear"
+        puts "Your username has been updated to #{new_name}!!!"
+        sleep(1.5)
+        system "clear"
     elsif user_name_selection == "Exit program"
+        system "clear"
         abort "Goodbye!"
     end
     
@@ -213,9 +226,17 @@ def runner
             Meal.get_user_meals(user_name_selection)
             sleep(0.5)
             puts "\n"
-            menu_selection = prompt.select("Please choose an option:", menu_options)
-            system "clear"
-            sleep(0.25)
+            delete_option = prompt.select("These are your favorite tacos!", ["Good to go", "Remove a Taco"])
+            if delete_option == "Remove a Taco"
+                system "clear"
+                Meal.destroy_user_meal(user_name_selection)
+            else
+                system "clear"
+                menu_selection = prompt.select("Please choose an option:", menu_options)
+                system "clear"
+                sleep(0.25)
+            end
+
 
         when "Exit Program"
             system "clear"

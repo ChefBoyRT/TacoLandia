@@ -18,7 +18,7 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = nil
 
 
-# binding.pry
+binding.pry
 
 # box
 # https://github.com/piotrmurach/tty-box#1-usage
