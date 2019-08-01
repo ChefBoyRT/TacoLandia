@@ -23,5 +23,12 @@ class User < ActiveRecord::Base
         return name
     end
 
+    def self.update_user_name(user_name)
+        old_name = User.find_by(name: user_name)
+        puts "What is your new name friend?"
+        user_input = gets.chomp
+        old_name.update(name: user_input)
+        user_input
+    end
 
 end
