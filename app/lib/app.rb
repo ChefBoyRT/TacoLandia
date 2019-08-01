@@ -1,5 +1,10 @@
+
+
+
+
 def welcome_user
-    puts "
+    box = TTY::Box.frame(width: 100, height: 35, border: :thick, align: :center, padding: 3) do
+      "
     __    __    ___  _        __   ___   ___ ___    ___         
    |  |__|  |  /  _]| |      /  ] /   \\ |   |   |  /  _]        
    |  |  |  | /  [_ | |     /  / |     || _   _ | /  [_         
@@ -24,10 +29,35 @@ def welcome_user
   |  |  |  |  \\     ||     ||     ||  |  ||  |  ||     | |  | |  |  |
   |__|  |__|__|\\____| \\___/ |_____||__|__||__|__||_____||____||__|__|
                                                                 
-"
+"end
+    print box
     sleep(2)
     system "clear"
     puts "Tell us who you are!!!"
+end
+
+def goodbye 
+    box = TTY::Box.frame(width: 100, height: 35, border: :thick, align: :center, padding: 8) do
+    "
+    ____   ___    ___   ___    ____   __ __    ___     
+   /    | /   \\  /   \\ |   \\  |    \\ |  |  |  /  _]    
+  |   __||     ||     ||    \\ |  o  )|  |  | /  [_     
+  |  |  ||  O  ||  O  ||  D  ||     ||  ~  ||    _]    
+  |  |_ ||     ||     ||     ||  O  ||___, ||   [_     
+  |     ||     ||     ||     ||     ||     ||     |    
+  |___,_| \\___/  \\___/ |_____||_____||____/ |_____|    
+                                                       
+   _____  ____   ____    ___  ____   ___    __  __  __ 
+  |     ||    \\ |    |  /  _]|    \\ |   \\  |  ||  ||  |
+  |   __||  D  ) |  |  /  [_ |  _  ||    \\ |  ||  ||  |
+  |  |_  |    /  |  | |    _]|  |  ||  D  ||__||__||__|
+  |   _] |    \\  |  | |   [_ |  |  ||     | __  __  __ 
+  |  |   |  .  \\ |  | |     ||  |  ||     ||  ||  ||  |
+  |__|   |__|\\_||____||_____||__|__||_____||__||__||__|
+                                                       
+  "    
+  end
+  print box                                              
 end
 
 def runner
@@ -68,7 +98,8 @@ def runner
         system "clear"
     elsif user_name_selection == "Exit program"
         system "clear"
-        abort "Goodbye!"
+        goodbye
+        abort 
     end
     
 
@@ -240,10 +271,12 @@ def runner
 
         when "Exit Program"
             system "clear"
-            abort "Goodbye!"
+            goodbye
+            abort 
         else
             system "clear"
-            abort "Goodbye!"
+            goodbye
+            abort 
         end
     end
     
