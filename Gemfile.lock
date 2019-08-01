@@ -13,6 +13,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    colorize (0.8.1)
     concurrent-ruby (1.1.5)
     equatable (0.6.1)
     i18n (1.6.0)
@@ -58,6 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 5.2)
+  colorize
   require_all (~> 2.0)
   sinatra (~> 2.0)
   sinatra-activerecord (~> 2.0)
