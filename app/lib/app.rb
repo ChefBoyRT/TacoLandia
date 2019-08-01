@@ -77,7 +77,6 @@ end
 
 def runner
     system "clear"
-    banner
     #Welcomes user or creates new user
     prompt = TTY::Prompt.new
     welcome_user
@@ -116,6 +115,7 @@ def runner
         system "clear"
         banner
         puts "Your username has been updated to #{new_name}!!!"
+        user_name_selection = new_name
         sleep(1.5)
         system "clear"
         banner

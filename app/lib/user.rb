@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
     # Asks user for name, receives a name, and prints out a welcom message with name
     def self.create_user_name
+        puts "What is your name friend?"
         name = gets.chomp
         User.create(name: name)
         system "clear"
