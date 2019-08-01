@@ -79,6 +79,7 @@ def runner
     system "clear"
     #Welcomes user or creates new user
     prompt = TTY::Prompt.new
+    bar = TTY::ProgressBar
     welcome_user
     sleep(1.5)
     system "clear"
