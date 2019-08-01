@@ -16,4 +16,5 @@ gem "colorize"
 gem "tty-box"
 gem "tty-cursor"
 gem "tty-screen"
+gem "paint"
 

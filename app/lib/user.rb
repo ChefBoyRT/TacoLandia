@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
         name = gets.chomp
         User.create(name: name)
         system "clear"
+        banner
         puts "Welcome to TacoLandia #{name}!"
         ###Avocado Dancing####
         return name

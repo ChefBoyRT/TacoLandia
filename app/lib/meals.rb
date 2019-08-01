@@ -11,12 +11,15 @@ class Meal < ActiveRecord::Base
             puts "Your taco has been saved!!!"
             sleep(1.25)
             system "clear"
+            banner
         else
             system "clear"
+            banner
             puts "You already LOVE this taco!!!"
             puts "...and this taco already loves you too..."
             sleep(2.5)
             system "clear"
+            banner
         end
     end
 
@@ -36,6 +39,7 @@ class Meal < ActiveRecord::Base
         user_meals = get_user_meals(user)
         user_id = User.find_by(name: user).id
         system "clear"
+        banner
         user_taco_selection = prompt.select("Which taco would you like to remove from your favorites?", user_meals)
         # binding.pry
         taco_id = Taco.find_by(name: user_taco_selection).id
