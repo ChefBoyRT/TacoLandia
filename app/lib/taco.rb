@@ -23,8 +23,17 @@ class Taco < ActiveRecord::Base
         Taco.where(protein: protein)
     end
 
+    def self.progress_bar
+        0.step(40, 2) do |i|
+            printf("\rCalculating: %-1s", "🌮" * (i/5))
+            sleep(0.20)
+          end
+          puts
+    end
+    
+
     def self.quiz
-        prompt = TTY::Prompt.new
+        prompt = TTY::Prompt.new(symbols: {marker: '🌮'})
         system "clear"
         banner
         protein = prompt.select("What kind of protein would you like?", %w[Chicken Beef Pork Veggies Seafood])
@@ -43,14 +52,18 @@ class Taco < ActiveRecord::Base
         random_taco = return_tacos.sample
         random_compatibility_score = rand(80..100)
         if drink == "Yes..(21+)"
+            self.progress_bar
+            puts "\n"
             puts "Your best match is a #{random_taco.name} with a #{random_taco.drink.name}!"
             puts "\n"
-            sleep(1.5)
+            sleep(1)
             puts "    TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
         else
+            self.progress_bar
+            puts "\n"
             puts "        Your best match is a #{random_taco.name}!"
             puts "\n"
-            sleep(1.5)
+            sleep(1)
             puts "TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
         end
         return random_taco

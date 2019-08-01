@@ -2,12 +2,8 @@ require 'sinatra/activerecord'
 require 'require_all'
 require 'pry'
 require 'tty-prompt'
-require 'colorize'
-require 'colorized_string'
 require 'tty-box'
-require 'tty-cursor'
-require 'tty-screen'
-require 'paint'
+require 'tty-progressbar'
 
 require_all 'app'
 
