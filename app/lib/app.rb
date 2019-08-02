@@ -48,6 +48,7 @@ def welcome_user
     system "clear"
     banner
     puts "Tell us who you are!!!"
+    sleep(2.5)
 end
 
 def goodbye 
@@ -75,12 +76,12 @@ def goodbye
 end
 
 def runner
-    pid = fork{ exec 'afplay', 'app/lib/taco_island.mp3' }
+    pid = fork{ exec 'afplay', 'app/lib/taco_island_loop.mp3' }
     system "clear"
     #Welcomes user or creates new user
     prompt = TTY::Prompt.new(symbols: {marker: '🌮'})
-    welcome_user
-    # Title.title_animation
+    # welcome_user
+    Title.title_animation
     sleep(1.5)
     system "clear"
     banner
@@ -122,7 +123,6 @@ def runner
         banner
     elsif user_name_selection == "Exit program"
         system "clear"
-        pid = fork{ exec 'killall', "afplay"}
         goodbye
         pid = fork{ exec 'killall', "afplay"}
         abort 

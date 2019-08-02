@@ -292,7 +292,7 @@ class Title
         system "clear"
         banner
         puts "Tell us who you are!!!"
-        
+        sleep(0.25)
     end
 
  end
