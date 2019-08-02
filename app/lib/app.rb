@@ -121,6 +121,7 @@ def runner
         banner
     elsif user_name_selection == "Exit program"
         system "clear"
+        pid = fork{ exec 'killall', "afplay"}
         goodbye
         abort 
     end
