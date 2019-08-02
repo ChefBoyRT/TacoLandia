@@ -1,4 +1,3 @@
-
 def banner
     box = TTY::Box.frame(width: 80, height: 12, border: :thick, align: :center) do
         "
@@ -76,6 +75,7 @@ def goodbye
 end
 
 def runner
+    pid = fork{ exec 'afplay', 'app/lib/taco_island.mp3' }
     system "clear"
     #Welcomes user or creates new user
     prompt = TTY::Prompt.new(symbols: {marker: '🌮'})
@@ -322,6 +322,7 @@ def runner
         when "Exit Program"
             system "clear"
             goodbye
+            pid = fork{ exec 'killall', "afplay"}
             abort 
         else
             system "clear"

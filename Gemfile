@@ -13,5 +13,3 @@ gem "sinatra-activerecord", "~> 2.0"
 gem "require_all", "~> 2.0"
 gem "tty-prompt"
 gem "tty-box"
-gem 'tty-progressbar'
-
