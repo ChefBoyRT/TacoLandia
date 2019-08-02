@@ -3,7 +3,7 @@ require 'require_all'
 require 'pry'
 require 'tty-prompt'
 require 'tty-box'
-require 'tty-progressbar'
+
 
 require_all 'app'
 
