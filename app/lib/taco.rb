@@ -61,10 +61,10 @@ class Taco < ActiveRecord::Base
         else
             self.progress_bar
             puts "\n"
-            puts "        Your best match is a #{random_taco.name}!"
+            puts "Your best match is a #{random_taco.name}!"
             puts "\n"
             sleep(1)
-            puts "TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
+            puts "    TACO COMPATIBILITY SCORE: #{random_compatibility_score}%!!!!" 
         end
         return random_taco
     end

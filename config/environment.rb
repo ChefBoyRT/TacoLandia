@@ -3,6 +3,8 @@ require 'require_all'
 require 'pry'
 require 'tty-prompt'
 require 'tty-box'
+require "colorize"
+require "colorized_string"
 
 
 require_all 'app'
