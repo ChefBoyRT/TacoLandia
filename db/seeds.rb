@@ -48,7 +48,7 @@ grilled_tempeh = Taco.create(name: "Grilled Tempeh", protein: "veggies", heat_le
 tofu_and_black_bean = Taco.create(name: "Tofu and Black Bean", protein: "veggies", heat_level: 1, shell_type: "crunchy", drink: margarita)
 
 #Seafood Tacos
-baja_fish = Taco.create(name: "Baha Fish", protein: "seafood", heat_level: 1, shell_type: "crunchy", drink: beer)
+baja_fish = Taco.create(name: "Baja Fish", protein: "seafood", heat_level: 1, shell_type: "crunchy", drink: beer)
 veracruz_fish = Taco.create(name: "Veracruz Fish", protein: "seafood", heat_level: 2, shell_type: "crunchy", drink: margarita)
 chipotle_salmon = Taco.create(name: "Chipotle Salmon", protein: "seafood", heat_level: 3, shell_type: "crunchy", drink: sangria)
 grilled_shrimp = Taco.create(name: "Grilled Shrimp", protein: "seafood", heat_level: 2, shell_type: "soft", drink: margarita)
