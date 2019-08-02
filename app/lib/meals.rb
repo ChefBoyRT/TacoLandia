@@ -31,6 +31,7 @@ class Meal < ActiveRecord::Base
             puts meal.taco.name
             meal_tacos << meal.taco.name
         end
+        sleep(0.75)
         meal_tacos
     end
 
@@ -40,7 +41,7 @@ class Meal < ActiveRecord::Base
         user_id = User.find_by(name: user).id
         system "clear"
         banner
-        user_taco_selection = prompt.select("Which taco would you like to remove from your favorites?", user_meals)
+        user_taco_selection = prompt.select("Which taco would you like to remove?", user_meals)
         # binding.pry
         taco_id = Taco.find_by(name: user_taco_selection).id
         Meal.find_by(taco_id: taco_id, user_id: user_id).destroy

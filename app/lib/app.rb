@@ -80,6 +80,7 @@ def runner
     #Welcomes user or creates new user
     prompt = TTY::Prompt.new(symbols: {marker: '🌮'})
     welcome_user
+    # Title.title_animation
     sleep(1.5)
     system "clear"
     banner
@@ -122,6 +123,7 @@ def runner
     elsif user_name_selection == "Exit program"
         system "clear"
         goodbye
+        pid = fork{ exec 'killall', "afplay"}
         abort 
     end
     
@@ -157,7 +159,10 @@ def runner
                 system "clear"
                 banner
             else
+                system "clear"
+                banner
                 Taco.get_taco_details(taco_selection_by_protein)
+                puts "\n"
                 save_taco_response = prompt.select("Save taco to favorites?", ["Yes", "No"])
                 if save_taco_response == "Yes"
                     taco_id = Taco.get_taco_id(taco_selection_by_protein)
@@ -297,17 +302,26 @@ def runner
 
 
         when "See your favorite tacos"
-            sleep(0.25)
             system "clear"
             banner
-            Meal.get_user_meals(user_name_selection)
-            sleep(0.5)
+            user_meals = Meal.get_user_meals(user_name_selection)
             puts "\n"
             delete_option = prompt.select("These are your favorite tacos!", ["Good to go", "Remove a Taco"])
-            if delete_option == "Remove a Taco"
+            if delete_option == "Remove a Taco" && !user_meals.empty?
                 system "clear"
                 banner
                 Meal.destroy_user_meal(user_name_selection)
+
+            elsif delete_option == "Remove a Taco" && user_meals.empty?
+                system "clear"
+                banner
+                puts "There are no tacos to remove...yet!"
+                sleep(1)
+                system "clear"
+                banner
+
+                menu_selection = prompt.select("Please choose an option:", menu_options)
+            
             
             else
                 system "clear"
@@ -327,6 +341,7 @@ def runner
         else
             system "clear"
             goodbye
+            pid = fork{ exec 'killall', "afplay"}
             abort 
         end
     end
