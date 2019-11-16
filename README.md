@@ -79,7 +79,7 @@ we were looking for. Using our own love of tacos, we set out to build a fun, int
 clean UX/UI that would bring other users joy!
 
 ## Contact
-Created by [Catherine O'Hara](www.linkedin.com/in/catherine-o) and [Taylor Stein](www.linkedin.com/in/taylor-stein)
+Created by [Catherine O'Hara](https://www.linkedin.com/in/catherine-o/) and [Taylor Stein](https://www.linkedin.com/in/taylor-stein)
 
 Feel free to contact us!!! 🌮
 
